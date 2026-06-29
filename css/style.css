@@ -3,10 +3,25 @@
 :root{
     --primary-color: #010013;
     --secondary-color: #cab166;
+    --terciary-color: #d9d9d9;
     --text-color: #FAF9F6;
     --secondary-color-rgba: #cab16699;
     --primary-color-rgba: #01001399;
 }
+
+/*animações*/
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /*reset css*/
 
 *{
@@ -127,4 +142,77 @@ ul{
     box-shadow: 0 5px 15px var(--primary-color-rgba);
     backdrop-filter: blur(10px);
     padding: 15px 8%;
+}
+
+#home{
+    min-height: 100vh;
+    background: url("../img/") center center/ cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--primary-color-rgba);
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-content{
+    max-width: 650px;
+}
+
+.hero-content h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-content span{
+    color: var(--secondary-color);
+}
+
+.hero-content p{
+    font-size: 1.1rem;
+    color: var(--terciary-color);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.btn-principal{
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-principal:hover{
+    transform: translateY(-4px);
+}
+
+.btn-secundario{
+    border: 2px solid var(--secondary-color);
+    color: var(--text-color);
+    padding: 15px 35px;
+    border-radius: 40px;
+    transition: .3s;
+}
+
+.btn-secundario:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.hero-content{
+    animation: aparecer 1.2s ease;
 }
