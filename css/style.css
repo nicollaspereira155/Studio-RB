@@ -5,8 +5,9 @@
     --secondary-color: #cab166;
     --terciary-color: #d9d9d9;
     --text-color: #FAF9F6;
-    --secondary-color-rgba: #cab16699;
+    --secondary-color-rgba: #cab16650;
     --primary-color-rgba: #01001399;
+    --principal-font: 'Playfair Display', serif;
 }
 
 /*animações*/
@@ -54,6 +55,11 @@ ul{
     list-style: none;
 }
 
+.container{
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
 /*navigation bar*/
 
 .navbar{
@@ -72,7 +78,7 @@ ul{
 .logo{
     font-size: 2rem;
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--principal-font);
     color: var(--secondary-color)
 }
 
@@ -144,6 +150,8 @@ ul{
     padding: 15px 8%;
 }
 
+/*home*/
+
 #home{
     min-height: 100vh;
     background: url("../img/") center center/ cover no-repeat;
@@ -165,7 +173,7 @@ ul{
 }
 
 .hero-content h1{
-    font-family: 'Playfair Display', serif;
+    font-family: var(--principal-font);
     font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 25px;
@@ -215,4 +223,69 @@ ul{
 
 .hero-content{
     animation: aparecer 1.2s ease;
+}
+
+/*sobre*/
+
+#sobre{
+    padding: 120px 0;
+    background: var(--primary-color);
+    animation: aparecer .4s ease;
+}
+
+#sobre .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.sobre-img{
+    flex:1;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.sobre-img img{
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--primary-color-rgba);
+    transition: all .5s ease-in-out;
+}
+
+.sobre-img img:hover{
+    transform: scale(1.2);
+}
+
+.sobre-txt{
+    flex: 1;
+}
+
+.subtitulo{
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.sobre-txt h2{
+    font-family: var(--principal-font);
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+.sobre-txt p{
+    color: var(--terciary-color);
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.diferenciais{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.item{
+    font-weight: 500;
 }
